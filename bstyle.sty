@@ -1,0 +1,301 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{bstyle}[2019/06/27 Custom LaTeX style]
+
+%% Silence warning about obsolete package
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
+%% Standalone
+\RequirePackage{standalone}
+
+%% Encoding
+\RequirePackage[utf8]{inputenx}
+\RequirePackage[T1]{fontenc}
+
+%% Fonts and typography
+\RequirePackage{lmodern}           % Latin Modern
+\renewcommand{\sfdefault}{phv}     % Helvetica
+\RequirePackage[scaled]{beramono}  % Bera Mono (Bitstream Vera Sans Mono)
+\RequirePackage[final]{microtype}  % Improved typography
+\pretolerance = 1000               % Relaxes parameters for line breaks
+\tolerance    = 2000               % Relaxes parameters for line breaks
+\setlength{\emergencystretch}{1em} % Relaxes parameters for line breaks
+\RequirePackage{siunitx}           % Typesetting units
+\RequirePackage{listings}
+\RequirePackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+	language=Matlab,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	mathescape = false
+}
+
+\RequirePackage[obeyspaces,spaces,hyphens]{url} % Typesetting URLs
+\urlstyle{sf}
+
+%% Mathematics
+\RequirePackage{amssymb}    % Extra symbols
+\RequirePackage{amsthm}     % Theorem-like environments
+\RequirePackage{thmtools}   % Theorem-like environments, extends amsthm
+\RequirePackage{mathtools}  % Fonts and environments for mathematical formulae
+\RequirePackage{mathrsfs}   % Script font with \mathscr{}
+\RequirePackage{dsfont}     % Double stroke font with \mathds{}
+\RequirePackage{cancel}     % Cancel terms with \cancel, \bcancel or \xcancel
+\RequirePackage{stmaryrd}   % Brackets
+\everymath
+{
+    \ifodd\value{page}          % Allow multiline equations
+        \allowdisplaybreaks[1]  % to break across two pages:
+        \else                   % - Breaks from odd to even pages are allowed,
+        \allowdisplaybreaks[4]  %   but discouraged.
+    \fi                         % - Breaks from even to odd pages are allowed.
+}
+
+%% Graphics
+\RequirePackage[dvipsnames,
+                svgnames,
+                cmyk]{xcolor}     % Pre-defined colors
+\RequirePackage{graphicx}         % Tool for importing images
+\RequirePackage{tikz}             % Drawing tool
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta}
+
+%% Organising tools
+\RequirePackage{etoolbox}                                % Hooks
+\RequirePackage{pgffor}                                  % For-loops
+\RequirePackage{parskip}
+
+\RequirePackage{geometry}
+\geometry{margin=1in}
+
+%% Miscellaneous
+\RequirePackage{xspace}         % Clever space
+\RequirePackage{textcomp}       % Extra symbols
+\RequirePackage{multirow}       % Rows spanning multiple lines in tables
+\RequirePackage{tablefootnote}  % Footnotes for tables
+
+%% Cross references
+\RequirePackage{varioref}
+\RequirePackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue,
+}
+\RequirePackage[nameinlink, capitalize, noabbrev]{cleveref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MEMOIR SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Book
+\renewcommand*{\printbooktitle}[1]
+{
+    \hrule\vskip\onelineskip
+    \centering\booktitlefont #1
+    \vskip\onelineskip\hrule
+}
+\renewcommand*{\afterbookskip}{\par}
+\renewcommand*{\booktitlefont}{\Huge\bfseries\boldmath\sffamily}
+\renewcommand*{\booknamefont}{\normalfont\huge\bfseries\MakeUppercase}
+
+%% Part
+\renewcommand*{\printparttitle}[1]
+{
+    \hrule\vskip\onelineskip
+    \centering\parttitlefont #1
+    \vskip\onelineskip\hrule
+}
+\renewcommand*{\afterpartskip}{\par}
+\renewcommand*{\parttitlefont}{\Huge\bfseries\boldmath\sffamily}
+\renewcommand*{\partnamefont}{\normalfont\huge\bfseries\MakeUppercase}
+
+%% Chapter
+\chapterstyle{demo2}
+\renewcommand*{\printchaptername}
+{
+    \centering\chapnamefont\MakeUppercase{\@chapapp}
+}
+\renewcommand*{\printchapternum}{\chapnumfont\thechapter\space}
+\renewcommand*{\chaptitlefont}{\Huge\bfseries\boldmath\sffamily\center}
+
+%% Lower level sections
+\setsecheadstyle{\Large\bfseries\boldmath\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\boldmath\sffamily\raggedright}
+\setsubsubsecheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+\setparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+\setsubparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+
+%% Abstract
+\renewcommand{\abstractnamefont}{\sffamily\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\small\noindent\ignorespaces}
+
+%% Table of contents
+\setrmarg{3em}
+\setpnumwidth{2em}
+\addtolength{\cftbooknumwidth}{0.5em}
+\addtolength{\cftpartnumwidth}{0.5em}
+\addtolength{\cftchapternumwidth}{0.5em}
+\addtolength{\cftsectionindent}{0.5em}
+\addtolength{\cftsubsectionindent}{0.5em}
+\addtolength{\cftsubsubsectionindent}{0.5em}
+\addtolength{\cftparagraphindent}{0.5em}
+\addtolength{\cftsubparagraphindent}{0.5em}
+\renewcommand{\cftchapteraftersnumb}{\bfseries\boldmath}
+
+%% Header and footer
+\pagestyle{ruled}
+\makeoddhead {ruled}{\course}{Kyle Monette}{\rightmark}
+\makeoddfoot{ruled}{}{Page \thepage}{}
+
+\makepagestyle{chapter}
+\makeoddfoot{chapter}{}{Page \thepage}{}
+
+%% Environments
+\declaretheoremstyle[headfont   = \bfseries\sffamily,
+		notefont = \normalfont,
+		bodyfont = \itshape,
+                spaceabove = 6pt,
+                spacebelow = 6pt,
+		postheadspace = \newline]{plain}
+\declaretheoremstyle[headfont = \bfseries\sffamily,
+                     notefont = \normalfont,
+                     spaceabove = 6pt,
+                     spacebelow = 6pt,
+		     postheadspace = \newline]{definition}
+\declaretheorem[style = plain, numberwithin = section]{theorem}
+\declaretheorem[style = plain,      sibling = theorem]{corollary}
+\declaretheorem[style = plain,      sibling = theorem]{lemma}
+\declaretheorem[style = plain,      sibling = theorem]{proposition}
+\declaretheorem[style = plain,      sibling = theorem]{observation}
+\declaretheorem[style = plain,      sibling = theorem]{conjecture}
+\declaretheorem[style = definition, sibling = theorem]{definition}
+\declaretheorem[style = definition, sibling = theorem]{example}
+\declaretheorem[style = definition, sibling = theorem]{notation}
+\declaretheorem[style = remark,     sibling = theorem]{remark}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+\item[\hskip\labelsep
+	\itshape
+	#1\@addpunct{.}]\mbox{}\\*
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+%% Miscellaneous
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\AtEndEnvironment{example}{\null\hfill$\triangle$}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{bm}
+\RequirePackage{titling}
+\RequirePackage{lastpage}
+\RequirePackage{framed}
+\RequirePackage{mathtools}
+\RequirePackage{multicol}
+\RequirePackage{etoolbox}
+\RequirePackage{pgfplots}
+\RequirePackage{nicematrix}
+\RequirePackage{caption,subcaption,graphics,graphicx}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+             holdot/.style={color=black,fill=white,only marks,mark=*},
+     compat=1.12}
+\pgfplotsset{ytick style={draw=none},xtick style={draw=none}}
+\RequirePackage{wrapfig}
+\RequirePackage{adjustbox}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\renewcommand{\mod}[1]{\ \mathrm{mod}\ #1}
+\renewcommand*{\mathbf}[1]{\ifmmode\bm{#1}\else\textbf{#1}\fi}
+\makeatletter
+\def\zz\ignorespaces{\@ifnextchar-{}{\phantom{-}}}
+\newcolumntype{C}{>{\zz}{c}}
+\makeatother
+\newcommand{\bdef}[1]{
+	%\begin{framed}
+	\begin{definition}
+		#1
+	\end{definition}
+%\end{framed}		
+}
+\newcommand{\bthe}[1]{
+	%\begin{framed}
+	\begin{theorem}
+		#1
+	\end{theorem}
+%\end{framed}		
+}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Dim}{dim}
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\DeclareMathOperator{\Sup}{sup}
+\DeclareMathOperator{\Inf}{inf}
+\DeclareMathOperator{\Max}{max}
+\DeclareMathOperator{\Min}{min}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Curl}{curl}
+\let\implies\Rightarrow
+\let\iff\Leftrightarrow
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\Vert}{\Vert}
+\DeclarePairedDelimiter{\vect}{\langle}{\rangle}
+\DeclarePairedDelimiter\cbr{\{}{\}}
+\DeclarePairedDelimiter{\pbr}{(}{)}
+\DeclarePairedDelimiter\sbr{[}{]}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\makeatletter
+\renewcommand{\fnum@figure}{Figure \thefigure}
+\makeatother
+\makeatletter
+\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
+\newcommand\tb@int[2]{%
+  \sbox\z@{$\m@th#1\int$}%
+  \if#2t%
+    \rlap{\hbox to\wd\z@{%
+      \hfil
+      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+      \kern.05em % a small correction on the top
+    }}
+  \else
+    \rlap{\hbox to\wd\z@{%
+      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+      \hfil
+    }}
+  \fi
+}
+\makeatother
+
+
+\endinput
