@@ -1,0 +1,189 @@
+\documentclass[twosided]{memoir}
+\usepackage{mybook}
+\usepackage{bigfoot}
+\begin{document}
+\chapter{Conformal Mapping}
+\section{The Logarithmic Function}
+Consider the map defined by the function $w=\log z$. Let
+\begin{equation}
+	z=r\pbr*{\cos \phi +i\sin \phi }.
+\end{equation}
+
+Then
+\begin{equation}\label{3.1.2}
+\log z=\log r+\phi i.
+\end{equation}
+The function is infinitely multiple-valued. Select that branch for which
+\begin{equation}\label{3.1.3}
+-\pi <\phi <\pi.
+\end{equation}
+Thus the $z$-plane is cut along the negative axis of reals, and we are considering the single-valued function defined in this region, $S$, by equation \ref{3.1.2} and the inequalities \ref{3.1.3}. Let
+\[
+w=u+vi
+.\] Then
+\begin{equation}\label{3.1.4}
+u=\log r, \quad v=\phi.
+\end{equation}
+The positive axis of reals in the $z$-plane, $\phi =0$, goes over into the entire axis of reals in the $w$-plane:
+\begin{equation}\label{3.1.5}
+-\infty<u<\infty, \quad v=0.
+\end{equation}
+An arbitrary ray,
+\begin{equation}\label{3.1.6}
+\phi =\alpha ,\quad -\pi <\alpha <\pi
+\end{equation}
+goes over into a parallel to the $u$-axis,
+\begin{equation}\label{3.1.7}
+v=\alpha .
+\end{equation}
+On the other hand, the unit circle, $r=1$, goes over into a segment of the axis of pure imaginaries:
+\begin{equation}\label{3.1.8}
+u=0, \quad -\pi <v<\pi.
+\end{equation}
+And an arbitrary circle,
+\begin{equation}\label{3.1.9}
+r=\rho,
+\end{equation}
+goes over into an equal line-segment, displaced horizontally:
+\begin{equation}\label{3.1.10}
+u=\log \rho ,\quad -\pi <v<\pi.
+\end{equation}
+It appears, then, that the region $S$ of the $z$-plane is carried over into a region $T$ of the $w$-plane, consisting of a strip bounded by the parallels,
+\begin{equation}\label{3.1.11}
+v=\pi ,\quad v=-\pi. 
+\end{equation}
+Moreover, the map is \emph{conformal}. We can bring this fact out suggestively by drawing a suitable network of lines in the two regions. Let the strip be divided into a large number of congruent strips, let us say 12. Then draw corresponding line segments equally spaced, beginning with \ref{3.1.8} and choosing $\rho $ in \ref{3.1.10} so that the distance between two successive line segments will be the same as the breadth of a strip. Thus for the first line segment to the right,
+\[
+\log \rho_1=\frac{2\pi }{12} =0.5236
+\] and hence
+\[
+\rho =1.6881
+.\] This means that the circle 
+\[
+\abs*{z} =1.6881
+\] goes over into the line segment:
+\[
+u=0.5236, \quad -\pi <v<\pi 
+.\] And similarly for the other line segments, for which
+\[
+\log \rho_n=0.5236n, \quad \rho _n=e^{0.5236n}, \quad n=0, \pm 1, \dots 
+.\] Thus while the $u_n's$ form an \emph{arithmetic} series, the $\rho _n$'s form a \emph{geometric} series. The interior of the unit circle $\abs*{z} =1$ corresponds to the part of the strip $T$ to the left of the axis of pure imaginaries, and the images of the little squares in $T$ are the curvlinear quadrilaterals indicated in the figure. The exterior of the unit circle goes over into the part of the strip to the right.
+\section*{Exercises}
+\problem Into what figure is the quadrant of the unit circle which lies in the first quadrant carried by the above map?
+\problem What region is the circular ring bounded by the circles $\abs*{z} =1$ and $\abs*{z=2} $ and cut open along the negative axis of reals, carried into?
+
+\problem A rectangle in the $w$-plane is bounded by the lines
+\[
+u=-0.32,\quad u=1.8, \quad v=-0.25,\quad v=0
+.\] Draw accurately the image in the $z$-plane.
+
+\problem Plot accurately the point of the $w $-plane into which the point $z=-3-2i$ is transformed.
+\problem Plot accurately the point of the $z$-plane into which the point $w=-0.5371-0.6873i$ goes.
+
+\problem A plane area is bounded by two concentric circles of radii $2$ in. and $3$ in., and by two radii which make an angle of $45^\circ$ with each other. Show that it can be mapped conformally on a rectangle, and determine the ratio of the sides.
+
+\section{The Function $w=z^\alpha $}
+
+Consider the map defined by the function
+\begin{equation}\label{3.2.1}
+w=z^\alpha,
+\end{equation}
+where $\alpha $ is a positive real number. Let
+\[
+	z=r\pbr*{\cos \phi +i\sin \phi } ,\quad w=R\pbr*{\cos \psi +i\sin \psi } 
+.\] Then
+\[
+	R\pbr*{\cos \psi +i\sin \psi } =r^{\alpha }\pbr*{\cos \alpha \psi +i\sin \alpha \psi } 
+.\] Hence
+\begin{equation}\label{3.2.2}
+R=r^\alpha ,\quad \psi =\alpha \psi +2k\pi.
+\end{equation}
+Thus a circle about the origin, $z=0$, goes over into a circle about the origin, $w=0$.
+
+Consider a sector of a circle:
+\begin{equation}\label{3.2.3}
+0\le r\le r_1,\quad 0\le \phi \le \phi_1.
+\end{equation}
+Let $\psi=\alpha \phi $, and assume that $\alpha \phi_1=\pi $, $1<\alpha $. Let $r_1=1$; then $R_1=1$. Thus a sector of the unit circle in the $z$-plane, whose angle is $\phi _1=\pi /\alpha $, is opened out like a fan on a semicircle. And yet, not wholly like a fan, for the points of the $z$-figure are drawn in toward the centre. If, for example, $\alpha =2$, the points on the circle $r=\frac{1}{2}$ go over into points on the circle $R=\frac{1}{4}$.
+
+\section*{Exercises}
+\problem Study in detail the case $\alpha =3$. Taking $5$ cm as the unit, draw accurately the two figures, dividing each of the angles into six equal parts. Recalling the corresponding figure in \S 1, choose as radii in the one figure:
+\[
+\rho _n=e^{-0.5236n}, \quad n=0,1,2,3,4
+.\] 
+\problem Examine the case $0<\alpha <1$. In particular, let $\alpha =\frac{1}{3}$:
+\[
+w=z^{\frac{1}{3}}
+.\] How is this map related to the former map? Generalize.
+\problem Study the case: $1<\alpha $,
+\[
+\alpha \phi _1=\pi ,\quad r_1=\infty
+.\] Show that points inside the unit circle $\abs*{z} =1$ are drawn in nearer the origin, but points outside this circle are carried further away. Thus there is a stretching away from the unit circle, along the rays emanating from the origin.
+
+\section{The Function $w=\sin ^{-1}z$}
+The function 
+\begin{equation}\label{3.3.1}
+w=\sin ^{-1}z
+\end{equation}
+is defined by the equation:
+\begin{equation}\label{3.3.2}
+z=\sin w.
+\end{equation}
+Let
+\[
+w=u+vi,\quad z=x+yi
+.\] Now,
+\[
+	\sin (u+vi)=\sin u\cos vi+\cos u\sin vi
+.\] Recalling the formulas \ref{cos,sin} of Chapter 1, we have
+\begin{align*}
+	\cos vi&=\frac{e^{-v}+e^v}{2} =\ch v\\
+	\sin vi&=\frac{e^{-v}-e^v}{2i} =i\sh v
+\end{align*}
+Hence \ref{3.3.2} becomes:
+\begin{equation}\label{3.3.3}
+x+yi=\sin u\ch v+i\cos u\sh v,
+\end{equation}
+and so
+\begin{equation}\label{3.3.4}
+x=\sin u\ch v,\quad y=\cos u \sh v.
+\end{equation}
+From these last equations we infer that
+\begin{equation}\label{3.3.5}
+\frac{x^2}{\ch ^2v}+\frac{y^2}{\sh^2 v}=1,\quad \frac{x^2}{\sin ^2u}-\frac{y^2}{\cos ^2u}=1.
+\end{equation}
+Thus it appears that the straight lines $v=\text{const} $ go over into ellipses with their foci in the points $x=\pm 1,\, y=0$; and the straight lines $u=\text{const} $ go over into hyperbolas with the same foci.
+
+In particular, consider the strip in the $w$-plane bounded by the lines $u=\pm \pi /2$, with $v\ge 0$. A horizontal line segment
+\[
+-\frac{\pi}{2}\le u\le \frac{\pi}{2},\quad v=v_1>0,
+\]goes over into the semi-ellipse
+\[
+\frac{x^2}{\ch^2v_1}+\frac{y^2}{\sh^2v_1}=1,
+\] which lies in the upper half-plane:
+\[
+x=\ch v_1\sin u,\quad y=\sh v_1\cos u
+.\] And similarly, a ray
+\[
+u=u_1, \quad -\frac{\pi}{2}<u_1<\frac{\pi}{2}; \quad v>0
+,\] goes over into a half-branch of the hyperbola
+\[
+\frac{x^2}{\sin ^2u_1}-\frac{y^2}{\cos ^2u_1}=1
+\]
+\[
+x=\sin u_1\ch v,\quad y=\cos u_1\sh v
+.\] It is now easy to complete the map of the entire strip bounded by the lines $u=\pm \frac{\pi}{2}$. Reflect the map just constructed in each of the axes of reals. Thus the entire strip exclusive of the boundary is mapped on the entire $z$-plane exclusive of hte axis of reals to the right of $x=1$ and to the left of $x=-1$.
+
+\section*{Exercises}
+\problem Study in the same manner the map defined by the function
+\[
+w=\cos ^{-1}z
+.\] 
+
+\section{The Function $w=1 /z$}
+
+
+
+
+
+\end{document}

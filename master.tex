@@ -1,15 +1,25 @@
-\documentclass[letter, oneside]{memoir}
-\usepackage{bstyle}
-
-\makeoddhead{ruled}{Functions of a Complex Variable}{Osgood}{\rightmark}
-\makeoddfoot{ruled}{}{Me}{Page \thepage}
+\documentclass[twosided]{memoir}
+\usepackage{mybook}
 \begin{document}
 \thispagestyle{empty}
 \input{cover}
+\frontmatter
+\thispagestyle{empty}
+\begin{vplace}
+\begin{center}
+	{\large\bfseries Copyright 1938\\G.E. Stechert \& Co.}
+\end{center}
+\end{vplace} 
+\begin{KeepFromToc}
+\input{preface}
 \newpage
-\setcounter{page}{1}
+\input{mycomments}
+\newpage
 \tableofcontents
-\newpage
+\end{KeepFromToc}
+\mainmatter
 \input{chapter1}
+\input{chapter2}
+\input{chapter3}
 \end{document} 
 

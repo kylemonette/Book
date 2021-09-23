@@ -1,9 +1,7 @@
-\documentclass[letter,oneside]{memoir}
-\usepackage{bstyle}
-\begin{document}
 \chapter{Complex Numbers}
 \section{Introduction}
-Mathematicians did not begin by defining numbers: they worked with them. The consciousness of the number system grew, and at the beginning of the seventeenth century - the most important century up to that time in the history of human thought - algebra, as we know it in the requirements for admission to college, was completed. True, it was very far from complete when we look at the definition of number. But the formal processes were recognized, and science could go on. It is hard to imagine what the Greek mind might not have accomplished if Euclid and Archimedes could have passed the entrance examinations for Pei ta in Algebra\footnote{For an interesting account of the beginnings of arithmetic and algebra cf. David Eugene Smith: \begin{em}The Teaching and History of Elementary Mathematics\end{em}. A systematic development of the number system, so far as real numbers are concerned, is found in Osgood: \begin{em}Functions of Real Variables, Chap. II\end{em}.}.
+
+Mathematicians did not begin by defining numbers: they worked with them. The consciousness of the number system grew, and at the beginning of the seventeenth century---the most important century up to that time in the history of human thought---algebra, as we know it in the requirements for admission to college, was completed. True, it was very far from complete when we look at the definition of number. But the formal processes were recognized, and science could go on. It is hard to imagine what the Greek mind might not have accomplished if Euclid and Archimedes could have passed the entrance examinations for Pei ta in Algebra\footnote{For an interesting account of the beginnings of arithmetic and algebra cf. David Eugene Smith: \begin{emph}The Teaching and History of Elementary Mathematics\end{emph}. A systematic development of the number system, so far as real numbers are concerned, is found in Osgood: \begin{emph}Functions of Real Variables, Chap. II\end{emph}.}.
 
 Nor did mathematicians worry much over the foundations in algebra. The formal processes were enough for the next step: 
 \begin{align*}
@@ -28,10 +26,12 @@ But what if $b^2-4ac$ is negative? The algebrists of the sixteenth and seventeen
 	x^2+1&=0\\
 	x&=\pm \sqrt{-1} 
 \end{align*} They did not define $\sqrt{-1} $; they treated it like any other letter of algebra, replacing its square, however, by $-1$: 
-\begin{align}
-	a+b\sqrt{-1} +c +d \sqrt{-1} &= (a+c)+(b+d)\sqrt{-1} \\
-	(a+b\sqrt{-1} )(c+d\sqrt{-1}) &= ac+ad\sqrt{-1} +bc\sqrt{-1} +bd\left(\sqrt{-1}  \right) ^2=ac-bd+(ad+bc)\sqrt{-1}\label{1.2mult} 
-\end{align} 
+\begin{equation}
+	a+b\sqrt{-1} +c +d \sqrt{-1}= (a+c)+(b+d)\sqrt{-1}
+\end{equation}
+\begin{dmath}
+	(a+b\sqrt{-1} )(c+d\sqrt{-1}) = ac+ad\sqrt{-1} +bc\sqrt{-1} +bd\left(\sqrt{-1}  \right) ^2=ac-bd+(ad+bc)\sqrt{-1}\label{1.2mult} 
+\end{dmath} 
 
 The results were of far reaching importance. Algebraic geometry came into being. An ellipse may and may not be cut by a line its plane. It is not an exception for a line to fail to meet the curve. As many lines fail to meet it as meet it, so to speak. But when imaginaries are introduced, and the plane is suitably extended, \emph{every} right line cuts the ellipse, and there are in general two points of intersection. 
 
@@ -39,12 +39,11 @@ In algebra, the Fundamental Theorem emerged, namely, the fact that every algebra
 
 The modern developments of Arithmetic are more concerned with numbers which are not real, than with those which are. 
 
-But it was in Analysis that the most spectacular resets were achieved. The mathematicians of Euler's time had observed that when $\sqrt{-1} $ is introduced, the trigonometric functions on the one hand, and the logarithm and the exponential on the other, unite to form one family:
+But it was in Analysis that the most spectacular results were achieved. The mathematicians of Euler's time had observed that when $\sqrt{-1} $ is introduced, the trigonometric functions on the one hand, and the logarithm and the exponential on the other, unite to form one family:
 \begin{align}
-	\sin \phi &=\frac{e^{\phi i}-e^{-\phi i}}{2i} \\
+	\sin \phi &=\frac{e^{\phi i}-e^{-\phi i}}{2i} \\\label{cos,sin}
 	\cos \phi &= \frac{e^{\phi i}+e^{-\phi i}}{2} 
 \end{align} 
-
 where we write with Euler:
 \[
 i=\sqrt{-1} 
@@ -96,16 +95,16 @@ Y_2=y_1-y_2=2ie^{-ax}\sin cx
 \begin{equation}
 u_1=e^{-ax}\cos cx, \qquad u_2=e^{-ax}\sin cx
 \end{equation} 
-All this is seventeenth and eighteenth century mathematics, and can make no claim to rigor. There is no foundation for it to rest on. It is crass formalism. Nevertheless, this formal work has produced a concrete result. Here are two real functions which have emerged. Now the test of whether a given function is a solution of a differential equation is not the process whereby the function was obtained - we may have found it in the street. The test is: Does it satisfy the differential equation? Let us see.
+All this is seventeenth and eighteenth century mathematics, and can make no claim to rigor. There is no foundation for it to rest on. It is crass formalism. Nevertheless, this formal work has produced a concrete result. Here are two real functions which have emerged. Now the test of whether a given function is a solution of a differential equation is not the process whereby the function was obtained --- we may have found it in the street. The test is: Does it satisfy the differential equation? Let us see.
 \begin{align*}
 	u_1&=e^{-ax}\cos cx\\
 	\frac{du_1}{dx} &=-ae^{-ax}\cos cx-ce^{-ax}\sin cx\\
 	\frac{d^2u_1}{dx^2} &=\pbr*{a^2-c^2} e^{-ax}\cos cx+2ace^{-ax}\sin cx
-\end{align*} On multiplying the first of these equations by $b$, the second by $2a$ and adding, remembering \ref{1.1c}, the right-hand side reduces identically to $0$. Hence $u_1$ is a solution, in spite of the shady methods by which it was obtained. And similarly for $u_2$. 
+\end{align*} On multiplying the first of these equations by $b$, the second by $2a$ and adding, remembering \ref{1.1c}, the right---hand side reduces identically to $0$. Hence $u_1$ is a solution, in spite of the shady methods by which it was obtained. And similarly for $u_2$. 
 
 This example illustrates one side of the eighteenth century use of imaginaries. A large number of definite integrals, like 
 \[
-\int \limits_{0}^{\infty} \frac{\sin x}{x}  \: dx 
+\int _0^\infty \frac{\sin x}{x}  \: dx 
 \] were evaluated in this manner. In fact, the attempt to put his latter class of formal developments on a firm basis led Cauchy, in one of his earliest papers, in 1814, to lay the foundations of the Theory of Functions.
 
 Two other topics of eighteenth century mathematics should be mentioned before we leave this brief sketch of the main ideas which led up to the modern Theory of Functions of a Complex Variable. First, the problem of \emph{cartography}, or map making. This is the question of transforming one curved surface on another in such a manner that small figures on the one surface will go over in approximately similar figures of the other surface. A necessary condition is, that angles be preserved; i.e, the angles between two intersecting curves on the one surface and the angle between their images on the other surface, must be equal. Conversely, this condition is sufficient. Such a transformation is called \emph{isogonal}, and the map is called \emph{conformal}. There are two principal maps of the earth, which are used in geography, namely, Mercator's Chart and Stenographic Projection; cf. Chaps. II, \S 10 and III, \S 6. 
@@ -114,11 +113,11 @@ In particular, the surfaces may be planes. If a system of Cartesian coordinates 
 \begin{equation}\label{conformal}
 \frac{\partial u}{\partial x} =\frac{\partial u}{\partial y} , \qquad \frac{\partial u}{\partial y} =-\frac{\partial v}{\partial x} 
 \end{equation} 
-These are known as the \emph{Cauchy-Riemann Differential Equations}. They have come to us as the definition of conformal mapping. They appeared, however, still earlier, in a paper of Clairaut of the year 1743, on the Figure of the Earth, in his study of a two-dimensional flow of an incompressible fluid; cf. Chap II, \S 4. 
+These are known as the \emph{Cauchy---Riemann Differential Equations}. They have come to us as the definition of conformal mapping. They appeared, however, still earlier, in a paper of Clairaut of the year 1743, on the Figure of the Earth, in his study of a two---dimensional flow of an incompressible fluid; cf. Chap II, \S 4. 
 
 Thus even more fundamental than Geometry in the development of Analysis has been the science of Mechanics and Mathematical Physics. Nor was it in the study of hydromechanics alone. The first half of the nineteenth century brought a tremendously stimulating contribution to mathematical physics in the investigation of Fourier on the flow of heat in conducting substances. The flow of electricity in conductors obeys parallel laws, and the two problems are mathematically identical. Thus the work of Fourier helped to pave the way for Maxwell in his study of electricity and magnetism, in the second half of the last century. 
 
-When the flow is two-dimensional and is steady, the temperature $u$ satisfies \emph{Laplace's Equation}:
+When the flow is two---dimensional and is steady, the temperature $u$ satisfies \emph{Laplace's Equation}:
 \begin{equation}\label{laplace}
 \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} =0
 \end{equation}
@@ -133,14 +132,14 @@ z=x+yi, \qquad w=u+vi
 \] is meant a function which has a derivative; i.e, 
 \[
 	\lim\limits_{\Delta z \to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z} 
-\] shall exist, no matter how $\Delta z$ approaches $0$. A necessary condition for this limit to exist is, that $u$ and $v$ satisfy the Cauchy-Riemann Differential Equations \ref{conformal}, the partial derivatives being continuous functions. 
+\] shall exist, no matter how $\Delta z$ approaches $0$. A necessary condition for this limit to exist is, that $u$ and $v$ satisfy the Cauchy---Riemann Differential Equations \ref{conformal}, the partial derivatives being continuous functions. 
 
-This condition is conversely sufficient: If $u$ and $v$ are two real functions which have continuous first partial derivatives in a two-dimensional region $S$ of the $(x,y)$ plane, and if the Cauchy-Riemann Differential Equations are satisfied in $S$, then the complex function
+This condition is conversely sufficient: If $u$ and $v$ are two real functions which have continuous first partial derivatives in a two---dimensional region $S$ of the $(x,y)$ plane, and if the Cauchy---Riemann Differential Equations are satisfied in $S$, then the complex function
 \[
 	w=u+vi=f(z)
 \] will have a derivative at each point of $S$. Moreover, the functions $u$ and $v$ will then possess derivatives of all orders, and $u$ will satisfy Laplace's Equation \ref{laplace}, as is seen at once by eliminating $v$. 
 
-Thus the real part of an analytic function of a complex variable satisfies Laplace's Equation. Conversely, every every solution $u$ of Laplace's Equation leads to a complex conjugate function $v$ and the two together satisfy the Cauchy-Riemann Differential Equations. So the Theory of Functions of a Complex Variables is in principle coextensive with the theory of Laplace's Equation. 
+Thus the real part of an analytic function of a complex variable satisfies Laplace's Equation. Conversely, every every solution $u$ of Laplace's Equation leads to a complex conjugate function $v$ and the two together satisfy the Cauchy---Riemann Differential Equations. So the Theory of Functions of a Complex Variables is in principle coextensive with the theory of Laplace's Equation. 
 
 It is of historical interest to trace the origins of the Theory of Functions of a Complex Variable to the great branches of Mathematical Physics and of Geometry. It is no less important for a sure sense of scientific values, to recognize how deep these roots go down. Not the theory of unctions alone, but the mathematical physics of the future will take its origin in these same sources. We are studying something universal when we make these theories a part of our mental equipment and our habits of thought. 
 
@@ -210,9 +209,9 @@ A\oplus A_0=A_0\oplus A = A
 \emph{Vectors}: The number $A=(a,b)$ admits \emph{two} important geometrical interpretations:
 \begin{enumerate}[i.]
 	\item It can be represented by the point of the plane of coordinate geometry, whose coordinates are $(a,b)$.
-	\item It can be represented by the \emph{vector} whose initial point is the origin of coordinates, and whose terminal point is $(a,b)$ : or by any other equal vector.
+	\item It can be represented by the \emph{vector} whose initial point is the origin of coordinates, and whose terminal point is $(a,b)$: or by any other equal vector.
 \end{enumerate}
-The representation of complex numbers by the points of a plane, or by vectors in a plane, came into mathematics through the memoire of Argand, Paris, 1806. The method was known to Gauss and is contained implicitly in his doctoral thesis of 1799. The earliest publication is that of Gaspar Wessel, 1797/99. cf, \emph{Funktionentheorie} I, p.225.
+The representation of complex numbers by the points of a plane, or by vectors in a plane, came into mathematics through the memoire of Argand, Paris, 1806. The method was known to Gauss and is contained implicitly in his doctoral thesis of 1799. The earliest publication is that of Gaspar Wessel, 1797/99. cf. \emph{Funktionentheorie} I, p. 225.
 
 
 \begin{figure}[htbp]
@@ -267,9 +266,9 @@ X=B-A
 \[
 A+X=B
 .\] It is now easy to interpret the difference $B-A$ geometrically. 
-\begin{wrapfigure}{R}{0.2\textwidth}
+\begin{wrapfigure}{R}{0.3\textwidth}
 	\centering
-\scalebox{0.9}{%
+\scalebox{0.7}{%
 \begin{tikzpicture}
 	\draw[-Latex] (0,0) -- (2,1);
 	\node[below] at (0,0) {$O$};
@@ -289,7 +288,7 @@ The \emph{negative} of a number $A=(a,b)$ is defined as the number $(-a,-b)$, an
 	A=(a,b), \quad -A=(-a,-b)
 .\] 
 
-We have here the two meanings of the minus sign discussed in the \emph{Real Variables}, p.42.
+We have here the two meanings of the minus sign discussed in the \emph{Real Variables}, p. 42.
 
 \emph{Multiplication}: The second combination is defined to correspond to the formal law of multiplication of imaginaries \ref{1.2mult}.
 
@@ -366,7 +365,7 @@ X=\frac{B}{A}
 The sub-class consisting of the numbers $(a,0)$ constitute essentially a system of real numbers. For if we associate the number $(a,0)$ with the real number $a$:
 \[
 	(a,0) \sim a
-,\]  not only will a one-to-one relation between the members of the above subclass and those of the system of real numbers be set up, but a holohedric isomorphism with reference to the four species will also result. For, from
+,\]  not only will a one---to---one relation between the members of the above subclass and those of the system of real numbers be set up, but a holohedric isomorphism with reference to the four species will also result. For, from
 \[
 	(a,0) \sim a \quad \text{ and } \quad (b,0) \sim b
 \] follows that
@@ -409,7 +408,7 @@ A=0 \quad \text{ or } \quad B=0
 We see how easily and naturally this system of numbers was evolved, to meet the formal requirement of the product:
 \[
 	(a+b\sqrt{-1} )(c+d\sqrt{-1} )=ac-bd+(ad+bc)\sqrt{-1} 
-.\] It is a system of number-pairs-- pairs of real numbers, $a$ and $b$, just as the fractions were evolved from the natural numbers by forming number-pairs $(m,n)$; and again the negative numbers by forming pairs of negative numbers. There is nothing mystical or imaginary about the process. We see, too, how much simpler is the definition of $\sqrt{-1} $ than was the definition of $\sqrt{2} $. It was the definition of irrationals which was the most remote in all the extensions of the number system. 
+.\] It is a system of number---pairs: pairs of real numbers, $a$ and $b$, just as the fractions were evolved from the natural numbers by forming number---pairs $(m,n)$; and again the negative numbers by forming pairs of negative numbers. There is nothing mystical or imaginary about the process. We see, too, how much simpler is the definition of $\sqrt{-1} $ than was the definition of $\sqrt{2} $. It was the definition of irrationals which was the most remote in all the extensions of the number system. 
 
 The definition of ordinary complex numbers as pairs of real numbers is due to Sir William Rowan Hamilton, the inventor of quatrains, and dates from 1837.
 
@@ -423,10 +422,10 @@ A complex number, $z=x+yi$, can be expressed in polar coordinates by the formula
 \abs*{z} =\sqrt{x^2+y^2} 
 .\] The number $\phi $ has been called the ``amplitude'' and the ``argument'' of $z$. Neither term is satisfactory, nor has it been generally adopted. The term \emph{angle} would seem to be the simplest and most suggestive name for $\phi $, write:
 \[
-\phi =\text{arc} z
+\phi =\Arc z
 \] (read: ``angle of $z$''). For a given $z\neq 0$, there are an infinite number of determinations of $\phi $, differing from one another by multiples of $2\pi $. These are comprised, it is true, among the determinations of $\tan ^{-1}y /x$, but are not coextensive with them. Thus
 \[
-\text{arc } a=2n\pi , \quad n=0, \pm 1, \dots 
+\Arc a=2n\pi , \quad n=0, \pm 1, \dots 
 ,\] where $z=a$ is a positive real number. But
 \[
 \tan ^{-1}0=n\pi , \quad n=0, \pm 1, \dots 
@@ -453,9 +452,9 @@ z=x-yi
 	z_1z_2=r_1r_2\sbr*{\cos \pbr*{\phi_1+\phi_2}+i\sin \pbr*{\phi_1+\phi_2}  } 
 ,\] as is shown by trigonometry.
 
-\begin{wrapfigure}{r}{0.2\textwidth}
+\begin{wrapfigure}{r}{0.3\textwidth}
 	\centering
-\scalebox{0.9}{%
+\scalebox{0.7}{%
 \begin{tikzpicture}
 	\draw (0,3)--(0,0)--(3,0);
 	\node[above] at (0,3) {$z$-plane};
@@ -479,10 +478,10 @@ z=x-yi
 
 The result admits a simple geometrical interpretation. Construct the triangle whose vertices lie at the points $0, 1, z_1$; and likewise the triangle whose vertices are at $0, z_2, z_1, z_2$. These triangle are similar. For the angles at $0$ are equal, and the including sides are proportional. 
 
-Conversely, then: Given the numbers $z_1$ and $z_2$, construct the first triangle. Then draw a second triangle similar to the first, with vertex at $0$ and the side $\overline{0z_2}$ corresponding to the side $\overline{01}$. The third vertex will be at the point $z_1z_2$. 
+Conversely, then: Given the numbers $z_1$ and $z_2$, construct the first triangle. Then draw a second triangle similar to the first, with vertex at $0$ and the side $\overline{0z}_2$ corresponding to the side $\overline{01}$. The third vertex will be at the point $z_1z_2$. 
 
-\begin{wrapfigure}{R}{0.2\textwidth}
-\scalebox{0.9}{%
+\begin{wrapfigure}{R}{0.4\textwidth}
+\scalebox{0.7}{%
 \begin{tikzpicture}
 	\draw (0,2.3)--(0,0)--(2.3,0) node[above] at (0,2.3) {$z$-plane};
 	\draw (0,-2.3)--(0,0)--(-2.3,0);
@@ -514,7 +513,7 @@ In the above equation, then, the first factor, $r$, may be thought of as a \emph
 The interpretation can be extended to any product,
 \[
 AB
-.\] The effect of multiplying $B$ by $A$ is to \emph{stretch} the vector $B$ in the ratio of $\abs*{A} :1$, and then \emph{rotate} the vector thus obtained through the angle $\phi =\text{arc} A$ :
+.\] The effect of multiplying $B$ by $A$ is to \emph{stretch} the vector $B$ in the ratio of $\abs*{A} :1$, and then \emph{rotate} the vector thus obtained through the angle $\phi =\Arc A$ :
 \[
 AB=e^{\phi i}\abs*{A} B
 ,\] the order being:
@@ -583,13 +582,13 @@ x^n=1
 
 \emph{Inequalities}: The inequality of greatest importance is the following:
 \begin{equation}\label{triinq}
-	\abs*{A+B} \underset{=}{<} \abs*{A} +\abs*{B} 
+	\abs*{A+B} \le \abs*{A} +\abs*{B} 
 \end{equation} 
 
 
-\begin{wrapfigure}{R}{0.2\textwidth}
+\begin{wrapfigure}{R}{0.3\textwidth}
 \centering
-\scalebox{0.8}{%
+\scalebox{0.7}{%
 \begin{tikzpicture}
 	\draw[-latex] (0,0)--(2,0);
 	\draw[-latex] (2,0)--(3,1);
@@ -604,43 +603,42 @@ Geometrically it is once obvious. It says that the length of one side of a trian
 
 From \ref{triinq} it follows immediately that
 \begin{equation}
-	\abs*{A_1+\dots +A_n} \underset{=}{<}\abs*{A_1} +\dots +\abs*{A_n}.
+	\abs*{A_1+\dots +A_n} \le \abs*{A_1} +\dots +\abs*{A_n}.
 \end{equation}
 A further inequality is this:
 \[
-	\abs*{\cbr*{\abs*{A} -\abs*{B} } } \underset{=}{<}\abs*{A+B} 
+	\abs*{\cbr*{\abs*{A} -\abs*{B} } } \le \abs*{A+B} 
 .\] It can be deduced from \ref{triinq} by writing
 \[
-	\abs*{A+C} \underset{=}{<} \abs*{A} +\abs*{C} 
+	\abs*{A+C} \le \abs*{A} +\abs*{C} 
 \] and then setting
 \[
 A+C=-B
 .\] Thus
 \[
-	\abs*{B} -\abs*{A} \underset{=}{<} \abs*{A+B} 
+	\abs*{B} -\abs*{A}\le \abs*{A+B} 
 .\] In this last inequality, interchange $A$ and $B$:
 \[
-	\abs*{A} -\abs*{B} \underset{=}{<} \abs*{A+B} 
+	\abs*{A} -\abs*{B} \le \abs*{A+B} 
 .\] Hence the theorem.
 
-\section{Exercises}
-\begin{enumerate}
-\item Show that the product of any number by its conjugate is equal to the square of its absolute value.
-\item Let
+\section*{Exercises}
+\problem Show that the product of any number by its conjugate is equal to the square of its absolute value.
+\problem Let
 	\[
 		G(x)=a_0x^n+a_1x^{n-1}+\dots +a_n
 	\] be a polynomial with real coefficients. Show that the conjugate of $G(z)$ is equal to $G(\overline{z})$. 
-\item Let
+\problem Let
 	\[
 		R(x)=\frac{f(x)}{\phi(x)} 
 	\] be a rational function, the polynomials $f(x)$, $\phi (x)$ having real coefficients. Show that the conjugate of $R(z)$ is $R(\overline{z})$.
-\item If the linear function
+\problem If the linear function
 	\[
 	\frac{az+b}{cz+d} ,\quad ad-bc\neq 0
 	,\] takes on real values for three distinct real values of $z$, show that the coefficients can all be taken as real numbers. 
 
 	Is it correct to say: ``The coefficients are all real''?
-\item The function
+\problem The function
 	\[
 	w=\log z
 	\] is defined by the equation:
@@ -653,47 +651,47 @@ A+C=-B
 \[
 	z=r\pbr*{\cos \phi +i\sin \phi }
 .\]
-\item Show that
+\problem Show that
 	\[
 		\log (-1)=(2n+1)\pi i, \quad n=0, \pm 1, \dots 
 	.\] 
-\item Plot the points
+\problem Plot the points
 	\[
 		\log (-5-12i)
 	.\] 
-\item Show that
+\problem Show that
 	\[
 	\tan ^{-1}z=\frac{i}{2}\log \frac{i+z}{i-z} 
 	.\] 
-\item Show that
+\problem Show that
 	\[
 		\cos ^{-1}x=i\log \pbr*{x+\sqrt{x^2-1} } 
 	,\] and obtain a similar formula for $\sin ^{-1}x$.
-\item Compute:
+\problem Compute:
 	\[
 	\sin ^{-1}2; \quad \cos \frac{i}{2}; \quad \tan ^{-1}2i
 	.\] 
-\item Solve the equation:
+\problem Solve the equation:
 	\[
 	x^n=-1
 	.\] Plot the roots for the cases $n=2,3,4,5,6$.
-\item Solve the equation
+\problem Solve the equation
 	\[
 	x^3=-1
 	\] by algebraic methods, and show that the results agree with those of Question 11.
-\item Solve the equation:
+\problem Solve the equation:
 	\[
 	x^2+2ix-5=0
 	,\] and plot the roots.
-\item The same for
+\problem The same for
 	\[
 		x^2+(4-2i)x+(1-i)=0
 	.\] 
-\item Find all the roots of the equation:
+\problem Find all the roots of the equation:
 	\[
 	x^5=15
 	,\] and plot them.
-\item Prove the addition theorem:
+\problem Prove the addition theorem:
 	\[
 	e^{u+v}=e^{u}e^{v}
 	,\] for complex values of the arguments.
@@ -702,16 +700,16 @@ A+C=-B
 	\[
 	u=u_1+iu_2, \quad v=v_1+iv_2
 	.\] 
-\item Prove the addition theorem:
+\problem Prove the addition theorem:
 	\begin{align*}
 		\sin (u+v)&=\sin u\cos v+\cos u\sin v\\
 		\cos (u+v)&=\cos u\cos v-\sin u\sin v
 	\end{align*} for complex values of the arguments.
-\item State accurately under what conditions the equation
+\problem State accurately under what conditions the equation
 	\[
 	\log u+\log v=\log uv
 	\] is true for complex values of the arguments, and prove your statement.
-\item If
+\problem If
 	\[
 	\abs*{A} <h \quad \text{ and } \quad \abs*{B} <h
 	,\] show that
@@ -721,31 +719,31 @@ A+C=-B
 	\[
 	\abs*{\pm A\pm B} <2h
 	,\] where all four possible combinations of the $\pm$ sign are admitted.
-\item Prove that
+\problem Prove that
 	\[
-		\frac{1}{\sqrt{2} } \sbr*{\abs*{A} +\abs*{B} } \underset{=}{<} \abs*{a+bi} 
+		\frac{1}{\sqrt{2} } \sbr*{\abs*{A} +\abs*{B} } \le \abs*{a+bi} 
 	,\] where $a$ and $b$ are real numbers.
-\item If
+\problem If
 	\[
 	\abs*{A-B} <\epsilon \quad \text{ and } \quad \abs*{B-C} <\epsilon
 	,\] show that
 	 \[
 	\abs*{A-C} <2\epsilon
 	.\] 
-\item If $\abs*{z} \underset{=}{<} h <1$, show that
+\problem If $\abs*{z} \le h <1$, show that
 	\[
-		\abs*{\text{arc} (1+z)} \underset{=}{<} \sin ^{-1}h
-	,\] where the numerically smallest value of $\text{arc} (1+z)$ is taken. 
+		\abs*{\Arc (1+z)} \le \sin ^{-1}h
+	,\] where the numerically smallest value of $\Arc (1+z)$ is taken. 
 
 	Suggestion: Draw a circle of radius $h$ about the point $1$. The point $1+z$ will lie in this circle.
-\item A force can be represented by a vector. If forces $Z_1, \dots , Z_n$ act at a point and all lie in a plane, show that the resultant force, $Z$, is represented by the sum:
+\problem A force can be represented by a vector. If forces $Z_1, \dots , Z_n$ act at a point and all lie in a plane, show that the resultant force, $Z$, is represented by the sum:
 	\[
 	Z=Z_1+\dots +Z_n
 	.\] 
-\item What is the condition that $n$ forces, lying in a plane and acting at a point, will be in equilibrium? 
-\item The $n$ complex $n$-th roots of unity can be represented as vectors. Interpret the vectors as $n$ forces acting at a point. Hence show that the sum of the $n$ complex $n$-th roots of unity is equal to zero. 
-\item Devise a somewhat similar proof to show that the sum of the $k$-th powers of the $n$ complex $n$-th roots of unity is $0$.
-\item The theorem of partial fractions asserts that any proper fraction can be represented as the sum of the terms of the type:
+\problem What is the condition that $n$ forces, lying in a plane and acting at a point, will be in equilibrium? 
+\problem The $n$ complex $n$-th roots of unity can be represented as vectors. Interpret the vectors as $n$ forces acting at a point. Hence show that the sum of the $n$ complex $n$-th roots of unity is equal to zero. 
+\problem Devise a somewhat similar proof to show that the sum of the $k$-th powers of the $n$ complex $n$-th roots of unity is $0$.
+\problem The theorem of partial fractions asserts that any proper fraction can be represented as the sum of the terms of the type:
 	 \[
 		 \frac{A_0}{(z-a)^n} +\frac{A_1}{(z-a)^{n-1}}+\dots +\frac{A_{n-1} }{z-a} , \quad A_0\neq 0
 	.\] If the given fraction is the quotient of two polynomials with real coefficients, show that the fraction can be represented as the sum of expressions of the two types:
@@ -758,8 +756,4 @@ A+C=-B
 	\[
 	p^2-4q<0
 	.\] Of the three quantities $A_0, L_0, M_0$, one or two may vanish, but not all three.
-\end{enumerate}
-
-
-
-\end{document}
+%\end{document}

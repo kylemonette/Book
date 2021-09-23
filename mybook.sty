@@ -1,20 +1,16 @@
-\NeedsTeXFormat{LaTeX2e}
-
-\ProvidesPackage{bstyle}[2019/06/27 Custom LaTeX style]
-
+%\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mybook}[2019/06/27 Custom LaTeX style]
 %% Silence warning about obsolete package
 \RequirePackage{silence}
 \WarningFilter{remreset}{The remreset package}
-
 %% Standalone
 \RequirePackage{standalone}
-
 %% Encoding
 \RequirePackage[utf8]{inputenx}
 \RequirePackage[T1]{fontenc}
-
 %% Fonts and typography
 \RequirePackage{lmodern}           % Latin Modern
+\RequirePackage[english]{babel}
 \renewcommand{\sfdefault}{phv}     % Helvetica
 \RequirePackage[scaled]{beramono}  % Bera Mono (Bitstream Vera Sans Mono)
 \RequirePackage[final]{microtype}  % Improved typography
@@ -22,39 +18,18 @@
 \tolerance    = 2000               % Relaxes parameters for line breaks
 \setlength{\emergencystretch}{1em} % Relaxes parameters for line breaks
 \RequirePackage{siunitx}           % Typesetting units
-\RequirePackage{listings}
+\raggedbottom
+%\RequirePackage{euler}
 \RequirePackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\lstset{
-	language=Matlab,
-	aboveskip=3mm,
-	belowskip=3mm,
-	showstringspaces=false,
-	columns=flexible,
-	basicstyle={\small\ttfamily},
-	numbers=none,
-	numberstyle=\tiny\color{gray},
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
-	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3,
-	mathescape = false
-}
-
 \RequirePackage[obeyspaces,spaces,hyphens]{url} % Typesetting URLs
 \urlstyle{sf}
-
 %% Mathematics
 \RequirePackage{amssymb}    % Extra symbols
 \RequirePackage{amsthm}     % Theorem-like environments
-\RequirePackage{thmtools}   % Theorem-like environments, extends amsthm
 \RequirePackage{mathtools}  % Fonts and environments for mathematical formulae
 \RequirePackage{mathrsfs}   % Script font with \mathscr{}
 \RequirePackage{dsfont}     % Double stroke font with \mathds{}
+\RequirePackage{thmtools}
 \RequirePackage{cancel}     % Cancel terms with \cancel, \bcancel or \xcancel
 \RequirePackage{stmaryrd}   % Brackets
 \everymath
@@ -83,7 +58,10 @@
 \RequirePackage{parskip}
 
 \RequirePackage{geometry}
-\geometry{margin=1in}
+\geometry{paperwidth=5.5in,
+	paperheight=8.5in,
+	textwidth=4in,
+	textheight=6.5in}
 
 %% Miscellaneous
 \RequirePackage{xspace}         % Clever space
@@ -129,24 +107,25 @@
 \renewcommand*{\partnamefont}{\normalfont\huge\bfseries\MakeUppercase}
 
 %% Chapter
-\chapterstyle{demo2}
-\renewcommand*{\printchaptername}
-{
-    \centering\chapnamefont\MakeUppercase{\@chapapp}
-}
-\renewcommand*{\printchapternum}{\chapnumfont\thechapter\space}
-\renewcommand*{\chaptitlefont}{\Huge\bfseries\boldmath\sffamily\center}
+\chapterstyle{thatcher}%dash
+%\chapterstyle{demo2}
+%\renewcommand*{\printchaptername}
+%{
+%    \centering\chapnamefont\MakeUppercase{\@chapapp}
+%}
+%\renewcommand*{\printchapternum}{\chapnumfont\thechapter\space}
+%\renewcommand*{\chaptitlefont}{\Huge\bfseries\boldmath\sffamily\center}
+%\renewcommand*{\chaptitlefont}{\huge\bfseries\boldmath\sffamily\center}
 
 %% Lower level sections
-\setsecheadstyle{\Large\bfseries\boldmath\sffamily\raggedright}
-\setsubsecheadstyle{\large\bfseries\boldmath\sffamily\raggedright}
-\setsubsubsecheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
-\setparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
-\setsubparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
-
-%% Abstract
-\renewcommand{\abstractnamefont}{\sffamily\bfseries}
-\renewcommand{\abstracttextfont}{\normalfont\small\noindent\ignorespaces}
+%\setsecheadstyle{\Large\bfseries\boldmath\sffamily\raggedright}
+%\setsubsecheadstyle{\large\bfseries\boldmath\sffamily\raggedright}
+%\setsubsubsecheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+%\setparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+%\setsubparaheadstyle{\normalsize\bfseries\boldmath\sffamily\raggedright}
+\renewcommand*{\chapnumfont}{\normalfont\Large\MakeUppercase}
+\setsecheadstyle{\large\normalfont\centering\MakeUppercase\raggedright}
+\setsubsecheadstyle{\scshape\centering\raggedright}
 
 %% Table of contents
 \setrmarg{3em}
@@ -162,12 +141,12 @@
 \renewcommand{\cftchapteraftersnumb}{\bfseries\boldmath}
 
 %% Header and footer
-\pagestyle{ruled}
-\makeoddhead {ruled}{\course}{Kyle Monette}{\rightmark}
-\makeoddfoot{ruled}{}{Page \thepage}{}
+\pagestyle{headings}
+\makeoddhead{headings}{\rightmark}{}{\thepage}
+\makeevenhead{headings}{\thepage}{}{\leftmark}
 
 \makepagestyle{chapter}
-\makeoddfoot{chapter}{}{Page \thepage}{}
+\makeoddfoot{chapter}{}{\thepage}{}
 
 %% Environments
 \declaretheoremstyle[headfont   = \bfseries\sffamily,
@@ -190,8 +169,8 @@
 \declaretheorem[style = definition, sibling = theorem]{definition}
 \declaretheorem[style = definition, sibling = theorem]{example}
 \declaretheorem[style = definition, sibling = theorem]{notation}
-\declaretheorem[style = remark,     sibling = theorem]{remark}
-
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
 	\pushQED{\qed}%
@@ -216,15 +195,13 @@
 \RequirePackage{mathtools}
 \RequirePackage{multicol}
 \RequirePackage{etoolbox}
+\RequirePackage{breqn}
 \RequirePackage{pgfplots}
 \RequirePackage{nicematrix}
 \RequirePackage{caption,subcaption,graphics,graphicx}
 \pgfplotsset{soldot/.style={color=black,only marks,mark=*},
              holdot/.style={color=black,fill=white,only marks,mark=*},
      compat=1.12}
-\pgfplotsset{ytick style={draw=none},xtick style={draw=none}}
-\RequirePackage{wrapfig}
-\RequirePackage{adjustbox}
 
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
 \renewcommand{\mod}[1]{\ \mathrm{mod}\ #1}
@@ -233,20 +210,6 @@
 \def\zz\ignorespaces{\@ifnextchar-{}{\phantom{-}}}
 \newcolumntype{C}{>{\zz}{c}}
 \makeatother
-\newcommand{\bdef}[1]{
-	%\begin{framed}
-	\begin{definition}
-		#1
-	\end{definition}
-%\end{framed}		
-}
-\newcommand{\bthe}[1]{
-	%\begin{framed}
-	\begin{theorem}
-		#1
-	\end{theorem}
-%\end{framed}		
-}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\Dim}{dim}
 \DeclareMathOperator{\Null}{null}
@@ -257,45 +220,106 @@
 \DeclareMathOperator{\Min}{min}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Arc}{arc}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
 \let\implies\Rightarrow
 \let\iff\Leftrightarrow
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
+\renewcommand{\le}{\leqq}
+\newcounter{problem}
+\newcommand{\problem}{\stepcounter{problem}\par\bigskip\noindent\theproblem.\hspace{1em}}
+\counterwithin*{problem}{section}
+\RequirePackage{adjustbox}
+\RequirePackage{wrapfig}
+\usetikzlibrary{hobby}
+\usetikzlibrary{patterns}
+\input{insbox}
+\pgfplotsset{ytick style={draw=none}, xtick style={draw=none}}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\Vert}{\Vert}
 \DeclarePairedDelimiter{\vect}{\langle}{\rangle}
 \DeclarePairedDelimiter\cbr{\{}{\}}
 \DeclarePairedDelimiter{\pbr}{(}{)}
 \DeclarePairedDelimiter\sbr{[}{]}
+\RequirePackage[integrals]{wasysym}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
-
 \makeatletter
 \renewcommand{\fnum@figure}{Figure \thefigure}
 \makeatother
-\makeatletter
-\newcommand\tint{\mathop{\mathpalette\tb@int{t}}\!\int}
-\newcommand\bint{\mathop{\mathpalette\tb@int{b}}\!\int}
-\newcommand\tb@int[2]{%
-  \sbox\z@{$\m@th#1\int$}%
-  \if#2t%
-    \rlap{\hbox to\wd\z@{%
-      \hfil
-      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
-      \kern.05em % a small correction on the top
-    }}
-  \else
-    \rlap{\hbox to\wd\z@{%
-      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
-      \hfil
-    }}
-  \fi
-}
-\makeatother
 
+\RequirePackage{keyval}
+\RequirePackage[framemethod=Tikz]{mdframed}
+\declaretheoremstyle[%headfont = \bfseries\sffamily,
+		%notefont = \normalfont,
+		%bodyfont = \itshape,
+                %spaceabove = 6pt,
+                %spacebelow = 6pt,
+		postheadspace = \newline,
+		%postheadhook={\textcolor{red!20}{\rule[.6ex]{\linewidth}{0.9pt}}\\},
+		mdframed={
+    		nobreak=true,
+    		skipabove=\topskip,
+    		skipbelow=\topskip,
+    		innerleftmargin=0.5em,
+    		innerrightmargin=0.5em,
+    		innerbottommargin=0.5em,
+    		innertopmargin=0.5em,
+    		linewidth=0.25em,
+    		roundcorner=0.15em,
+    		linecolor=red!20,
+    		frametitlebackgroundcolor=red!20,
+		theoremseparator={.}}]{fplain}
+\declaretheoremstyle[headfont = \bfseries\sffamily,
+                     notefont = \normalfont,
+                     spaceabove = 6pt,
+                     spacebelow = 6pt,
+		     postheadspace = \newline,
+		mdframed={
+    		nobreak=true,
+    		skipabove=\topskip,
+    		skipbelow=\topskip,
+    		innerleftmargin=0.5em,
+    		innerrightmargin=0.5em,
+    		innerbottommargin=0.5em,
+    		innertopmargin=0.5em,
+    		linewidth=0.25em,
+    		roundcorner=0.15em,
+    		linecolor=black!10,
+    		frametitlebackgroundcolor=black!10,
+		theoremseparator={.}}]{fdefinition}
+
+%\declaretheorem[mdthm={style=thicc, linecolor=red!20, frametitlebackgroundcolor=red!20}, sibling=theorem, name=\lgtheorem]{fmd-theorem}
+%\declaretheorem[style=fplain, numberwithin=section, name=Theorem]{ftheorem}
+\surroundwithmdframed[
+        topline = false,
+        rightline = false,
+        bottomline = false,
+        linewidth = 3pt,
+        linecolor = black!60,
+        skipabove = \medskipamount,
+        skipbelow = \medskipamount]{theorem}
+\surroundwithmdframed[
+        topline = false,
+        rightline = false,
+        bottomline = false,
+        linewidth = 3pt,
+        linecolor = black!60,
+        skipabove = \medskipamount,
+        skipbelow = \medskipamount]{definition}
+%\surroundwithmdframed[
+%        topline = false,
+%        rightline = false,
+%        bottomline = false,
+%        linewidth = 3pt,
+%        linecolor = blue!20,
+%        skipabove = \medskipamount,
+%        skipbelow = \medskipamount]{proof}
 
 \endinput
